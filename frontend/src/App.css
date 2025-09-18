@@ -1,0 +1,356 @@
+/* Luxury Portfolio Custom Styles */
+
+/* Dynamic Background Effects */
+.dynamic-background {
+  background: linear-gradient(45deg, #0f0f23, #1a1a2e, #16213e, #533483);
+  background-size: 400% 400%;
+  animation: gradientShift 15s ease infinite;
+}
+
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Luxury Particle Effects */
+.particle {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  animation: particleFloat 8s infinite linear;
+}
+
+@keyframes particleFloat {
+  0% {
+    transform: translateY(100vh) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-100vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+/* Enhanced Hero Animations */
+.hero-text-reveal {
+  animation: textReveal 1.2s ease-out forwards;
+}
+
+@keyframes textReveal {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Luxury Button Effects */
+.luxury-button {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(45deg, #d4af37, #ffd700, #b8860b);
+  background-size: 200% 200%;
+  animation: buttonGradientShift 3s ease infinite;
+  transition: all 0.3s ease;
+}
+
+.luxury-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(212, 175, 55, 0.4);
+}
+
+.luxury-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  transition: left 0.5s;
+}
+
+.luxury-button:hover::before {
+  left: 100%;
+}
+
+@keyframes buttonGradientShift {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+/* Profile Image Effects */
+.profile-image-container {
+  position: relative;
+  overflow: hidden;
+  border-radius: 50%;
+  background: linear-gradient(45deg, #d4af37, #ffd700, #b8860b, #daa520);
+  padding: 4px;
+  animation: profileGlow 4s ease-in-out infinite alternate;
+}
+
+@keyframes profileGlow {
+  0% {
+    box-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
+  }
+  100% {
+    box-shadow: 0 0 40px rgba(212, 175, 55, 0.6);
+  }
+}
+
+.profile-image {
+  border-radius: 50%;
+  transition: transform 0.5s ease;
+}
+
+.profile-image:hover {
+  transform: scale(1.05);
+}
+
+/* Floating Badge Animations */
+.floating-badge {
+  animation: floatBadge 3s ease-in-out infinite;
+}
+
+@keyframes floatBadge {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Section Reveal Animations */
+.section-reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease-out;
+}
+
+.section-reveal.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Luxury Card Hover Effects */
+.luxury-card-hover {
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.luxury-card-hover::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, transparent, rgba(212, 175, 55, 0.1), transparent);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.luxury-card-hover:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(212, 175, 55, 0.2);
+}
+
+.luxury-card-hover:hover::before {
+  opacity: 1;
+}
+
+/* Skill Progress Bar Animations */
+.skill-progress {
+  position: relative;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+}
+
+.skill-progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #d4af37, #ffd700, #b8860b);
+  border-radius: 10px;
+  position: relative;
+  overflow: hidden;
+  animation: skillFillAnimation 2s ease-out;
+}
+
+.skill-progress-fill::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  animation: skillShimmer 2s infinite;
+}
+
+@keyframes skillFillAnimation {
+  from {
+    width: 0%;
+  }
+  to {
+    width: var(--skill-level);
+  }
+}
+
+@keyframes skillShimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+/* Navigation Effects */
+.nav-link {
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #d4af37, #ffd700);
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+  width: 100%;
+}
+
+/* Testimonial Card Effects */
+.testimonial-card {
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.6), rgba(83, 52, 131, 0.3));
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(212, 175, 55, 0.2);
+  transition: all 0.3s ease;
+}
+
+.testimonial-card:hover {
+  border-color: rgba(212, 175, 55, 0.4);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(212, 175, 55, 0.15);
+}
+
+/* Footer Gradient */
+.footer-gradient {
+  background: linear-gradient(180deg, transparent, rgba(0, 0, 0, 0.8));
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .hero-text-reveal h1 {
+    font-size: 3rem;
+  }
+  
+  .floating-badge {
+    position: static;
+    margin-top: 1rem;
+    animation: none;
+  }
+  
+  .profile-image-container {
+    width: 250px;
+    height: 250px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-text-reveal h1 {
+    font-size: 2.5rem;
+  }
+  
+  .profile-image-container {
+    width: 200px;
+    height: 200px;
+  }
+}
+
+/* Performance Optimizations */
+.gpu-accelerated {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+/* Accessibility Enhancements */
+@media (prefers-reduced-motion: reduce) {
+  .dynamic-background,
+  .hero-text-reveal,
+  .floating-badge,
+  .profile-image-container,
+  .skill-progress-fill,
+  .particle {
+    animation: none !important;
+  }
+  
+  .luxury-button:hover,
+  .luxury-card-hover:hover,
+  .profile-image:hover {
+    transform: none !important;
+  }
+}
+
+/* High Contrast Mode */
+@media (prefers-contrast: high) {
+  .luxury-button,
+  .skill-progress-fill {
+    background: #FFD700 !important;
+  }
+  
+  .testimonial-card {
+    border: 2px solid #FFD700 !important;
+    background: rgba(0, 0, 0, 0.9) !important;
+  }
+}
+
+/* Print Styles */
+@media print {
+  .dynamic-background,
+  .particle,
+  .floating-badge,
+  .luxury-button::before,
+  .skill-progress-fill::after {
+    display: none !important;
+  }
+  
+  .hero-text-reveal h1 {
+    color: #000 !important;
+  }
+  
+  .luxury-card-hover {
+    box-shadow: none !important;
+    transform: none !important;
+  }
+}
